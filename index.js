@@ -9,7 +9,7 @@ const __dirname = dirname(__filename);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/cadastro', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/pages/cadastro.html'));
+    res.sendFile(path.join(__dirname, 'public/pages/cadastroPassageiro.html'));
   });
 
 app.get('/login', (req, res) => {

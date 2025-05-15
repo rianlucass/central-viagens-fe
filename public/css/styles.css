@@ -1,0 +1,197 @@
+/* Fonte Inter do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Fundo com imagem */
+body {
+  background: url('../assets/img/plano-de-fundo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  padding-top: 100px; /* espaço para o header fixo */
+}
+
+/* Cabeçalho fixo */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0047AB;
+}
+
+.logo span {
+  color: black;
+  font-weight: 400;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+nav .btn-outline,
+nav .btn-primary {
+  padding: 0.45rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+nav .btn-outline {
+  background: white;
+  border: 1px solid #0047AB;
+  color: #0047AB;
+}
+
+nav .btn-outline:hover {
+  background: #f0f0f0;
+}
+
+nav .btn-primary {
+  background: #0047AB;
+  color: white;
+  border: none;
+}
+
+nav .btn-primary:hover {
+  background: #003080;
+}
+
+/* Formulário principal */
+.form-container {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 100px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.form-container h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.form-container p {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: space-between;
+}
+
+form input {
+  flex: 1 1 48%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+form input:focus {
+  border-color: #0047AB;
+}
+
+/* Campos que ocupam linha inteira */
+form input[type="email"],
+form input[type="password"],
+form input[name="nome"],
+form input[name="confirmarSenha"] {
+  flex: 1 1 100%;
+}
+
+/* Botão de envio */
+form button {
+  flex: 1 1 100%;
+  background-color: #0047AB;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 9999px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #003080;
+}
+
+.form-container p a {
+  color: #0047AB;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.form-container p a:hover {
+  text-decoration: underline;
+}
+
+/* Label escondido, para acessibilidade */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  form {
+    flex-direction: column;
+  }
+
+  form input {
+    flex: 1 1 100%;
+  }
+}
