@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Viagens | Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --sidebar: #0047AB;
+            --primary: #3498db;
+            --text-light: #ecf0f1;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #f8f9fa;
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 280px;
+            background: var(--sidebar);
+            color: var(--text-light);
+            padding: 1.5rem;
+            box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+        }
+        .sidebar h2 {
+            font-size: 1.4rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #3d5166;
+            margin-bottom: 1.5rem;
+        }
+        .nav-link {
+            color: var(--text-light);
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .nav-link:hover, .nav-link.active {
+            background: var(--primary);
+        }
+        .nav-link small {
+            opacity: 0.8;
+            font-size: 0.75rem;
+        }
+        .main {
+            flex: 1;
+            padding: 2rem;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+        }
+        .stat-card {
+            text-align: center;
+            padding: 1.25rem;
+        }
+        .stat-card .value {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--sidebar);
+        }
+        .list-group-item {
+            padding: 1rem 1.25rem;
+            border-color: rgba(0,0,0,0.05);
+        }
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            .sidebar { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Central Viagens</h2>
+        <nav class="nav flex-column">
+            <a class="nav-link active" href="#">
+                <div>Início</div>
+                <small>Dashboard principal</small>
+            </a>
+            <a class="nav-link" href="#">
+                <div>Minhas Viagens</div>
+                <small>Gerencie suas viagens</small>
+            </a>
+            <a class="nav-link" href="#">
+                <div>Cadastrar Viagem</div>
+                <small>Crie novas rotas</small>
+            </a>
+            <a class="nav-link" href="#">
+                <div>Passageiros</div>
+                <small>Lista completa</small>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main class="main">
+        <h3 class="mb-3">Visão Geral</h3>
+        <p class="text-muted mb-4">Bem-vindo ao painel de controle</p>
+
+        <!-- Estatísticas -->
+        <div class="row g-3 mb-4">
+            <div class="col-md-4">
+                <div class="card stat-card">
+                    <h6 class="text-muted">Viagens no Mês</h6>
+                    <p class="mb-0">+15% vs anterior</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stat-card">
+                    <h6 class="text-muted">Passageiros</h6>
+                    <p class="mb-0">+22% vs anterior</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stat-card">
+                    <h6 class="text-muted">Faturamento</h6>
+                    <div class="value">R$ 7.850,00</div>
+                    <span class="text-success">+18%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conteúdo -->
+        <div class="row g-4">
+            <!-- Próximas Viagens -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header bg-white border-bottom">
+                        <h5 class="mb-1">Próximas Viagens</h5>
+                        <small class="text-muted">Agendadas para os próximos dias</small>
+                    </div>
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item">
+                            <strong>Coelho Neto → Teresina</strong>
+                            <div class="text-muted">15/06/2023 às 08:00</div>
+                        </div>
+                        <div class="list-group-item">
+                            <span class="text-muted">Disponível</span>
+                            <div class="text-muted">15/06/2023 às 08:00</div>
+                        </div>
+                        <div class="list-group-item">
+                            <strong>Name</strong>
+                            <div class="text-muted">15/06/2023</div>
+                        </div>
+                        <div class="list-group-item">
+                            <strong>Name</strong>
+                            <div class="text-muted">15/06/2023</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reservas Recentes -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header bg-white border-bottom">
+                        <h5 class="mb-1">Reservas Recentes</h5>
+                        <small class="text-muted">Últimas reservas realizadas</small>
+                    </div>
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item">
+                            <strong>Name</strong>
+                            <div class="text-muted">15/06/2023</div>
+                        </div>
+                        <div class="list-group-item">
+                            <strong>Name</strong>
+                            <div class="text-muted">15/06/2023</div>
+                        </div>
+                        <div class="list-group-item">
+                            <strong>Name</strong>
+                            <div class="text-muted">15/06/2023</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -9,59 +9,81 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
-    <header>
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-        <div class="logo">Central <span>Viagens</span></div>
-        <nav>
+  <header>
+    <div class="container">
+      <div class="logo">Central <span>Viagens</span></div>
+      <nav>
         <a href="#">Início</a>
         <a href="#">Como Funciona</a>
         <button class="btn-outline">Entrar</button>
         <button class="btn-primary">Cadastrar</button>
-        </nav>
+      </nav>
     </div>
-    </header>
+  </header>
 
   <!-- Formulário -->
   <div class="form-container">
     <h2>Cadastre-se e Reserve Sua Viagem!</h2>
     <p>Crie sua conta e garanta as melhores opções de viagens.</p>
-    
-    <form id="formCadastroPassageiro">
-    <label for="nome" class="sr-only">Nome Completo</label>
-    <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
 
-    <label for="email" class="sr-only">Email</label>
-    <input type="email" id="email" name="email" placeholder="Email" required>
+    <form id="formCadastroPassageiro" novalidate>
+      <!-- Usuário -->
+      <label for="username" class="sr-only">Nome de Usuário</label>
+      <input type="text" id="username" name="usuario.username" placeholder="Nome de Usuário" required autocomplete="username">
 
-    <label for="cpf" class="sr-only">CPF</label>
-    <input type="text" id="cpf" name="cpf" placeholder="CPF" required>
+      <label for="email" class="sr-only">Email</label>
+      <input type="email" id="email" name="usuario.email" placeholder="Email" required autocomplete="email">
 
-    <label for="sexo" class="sr-only">Sexo</label>
-    <input type="text" id="sexo" name="sexo" placeholder="Sexo" required>
+      <label for="senha" class="sr-only">Senha</label>
+      <input type="password" id="senha" name="usuario.password" placeholder="Senha" required autocomplete="new-password">
 
-    <label for="telefone" class="sr-only">Telefone</label>
-    <input type="tel" id="telefone" name="telefone" placeholder="Telefone" required>
+      <label for="confirmarSenha" class="sr-only">Confirmar senha</label>
+      <input type="password" id="confirmarSenha" name="usuario.confirmarSenha" placeholder="Confirmar senha" required>
 
-    <label for="dataNascimento" class="sr-only">Data de Nascimento</label>
-    <input type="date" id="dataNascimento" name="dataNascimento" placeholder="Data de Nascimento" required>
+      <!-- Dados Pessoais -->
+      <label for="nome" class="sr-only">Nome Completo</label>
+      <input type="text" id="nome" name="dadosPessoais.nome" placeholder="Nome Completo" required>
 
-    <label for="estado" class="sr-only">Estado</label>
-    <input type="text" id="estado" name="estado" placeholder="Estado" required>
+      <label for="cpf" class="sr-only">CPF</label>
+      <input type="text" id="cpf" name="dadosPessoais.cpf" placeholder="CPF" required maxlength="14">
 
-    <label for="cidade" class="sr-only">Cidade</label>
-    <input type="text" id="cidade" name="cidade" placeholder="Cidade" required>
+      <label for="telefone" class="sr-only">Telefone</label>
+      <input type="tel" id="telefone" name="dadosPessoais.telefone" placeholder="Telefone" required maxlength="15" autocomplete="tel">
 
-    <label for="senha" class="sr-only">Senha</label>
-    <input type="password" id="senha" name="senha" placeholder="Senha" required>
+      <label for="dataNascimento" class="sr-only">Data de Nascimento</label>
+      <input type="text" id="dataNascimento" name="dadosPessoais.dataNascimento" placeholder="Data de Nascimento (dd/mm/aaaa)" required maxlength="10">
 
-    <label for="confirmarSenha" class="sr-only">Confirmar senha</label>
-    <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirmar senha" required>
+      <!-- Endereço -->
+      <label for="estado" class="sr-only">Estado</label>
+      <input type="text" id="estado" name="endereco.estado" placeholder="Estado" required>
 
-    <button type="submit">Cadastrar Conta</button>
+      <label for="cidade" class="sr-only">Cidade</label>
+      <input type="text" id="cidade" name="endereco.cidade" placeholder="Cidade" required>
+
+      <label for="cep" class="sr-only">CEP</label>
+      <input type="text" id="cep" name="endereco.cep" placeholder="CEP" required maxlength="9">
+
+      <label for="rua" class="sr-only">Rua</label>
+      <input type="text" id="rua" name="endereco.rua" placeholder="Rua" required>
+
+      <label for="numero" class="sr-only">Número</label>
+      <input type="text" id="numero" name="endereco.numero" placeholder="Número" required>
+
+      <label for="bairro" class="sr-only">Bairro</label>
+      <input type="text" id="bairro" name="endereco.bairro" placeholder="Bairro" required>
+
+      <label for="complemento" class="sr-only">Complemento</label>
+      <input type="text" id="complemento" name="endereco.complemento" placeholder="Complemento">
+
+      <!-- Botão -->
+      <button type="submit">Cadastrar Conta</button>
     </form>
-    
-    <p>Já tenho uma Conta <a href="#">Entrar</a></p>
+
+    <p> </p>
+    <p>Já tem uma Conta? <a href="#">Entrar</a></p>
   </div>
+
+  <script src="../js/cadastroPassageiro.js"></script>
 
 </body>
 </html>
