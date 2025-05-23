@@ -18,7 +18,7 @@ app.get('/cadastro-motorista', (req, res) => {
 
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/pages/login.html'));
-  });
+});
 
 app.get('/home', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/pages/passageiro/home.html'));
